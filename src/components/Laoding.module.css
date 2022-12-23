@@ -1,0 +1,84 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 99%;
+}
+.Glasscontiner{
+    width: 390px;
+    height: 400px;
+    margin: 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Glasscontiner .glass{
+    width: 200px;
+    height: 200px;
+    background: #5555553b ;
+    border-top: 1px solid rgba(176, 176, 176, 0.541);
+    border-left:1px solid rgba(193, 193, 193, 0.422);
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    transform: rotate(-15deg);
+    z-index: 5;
+}
+.Glasscontiner .squre{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 100px;
+    right: 3%;
+    border-radius: 8px;
+    background-color: #f39c12;
+    z-index: 2;
+    animation: squreAnime 1.5s ease-in-out infinite;
+}
+@keyframes squreAnime {
+    0%{
+        z-index: 2;
+        top: 100px;
+        right: 3%;
+        transform: rotate(0deg);
+    }
+    50%{
+        top: 220px;
+        right: 76%;
+        transform: rotate(180deg);
+    }
+    90%{
+        z-index: 7;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.Glasscontiner .circle{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 210px;
+    right: 76%;
+    border-radius: 50%;
+    background: #04fe4d;
+    z-index: 7;
+    animation: circleAnimate 1.5s ease-in-out infinite;
+}
+@keyframes circleAnimate {
+    0%{
+        z-index: 7;
+        top: 210px;
+        right: 76%;
+    }
+    50%{
+        top: 100px;
+        right: 2%;
+    }
+    90%{
+        z-index: 2;
+    }
+    100%{
+    }
+}

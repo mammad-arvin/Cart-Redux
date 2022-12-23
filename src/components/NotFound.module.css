@@ -1,0 +1,5 @@
+.notFound{
+    background: url('../assets/undraw_page_not_found_re_e9o6.svg') center/contain no-repeat;
+    width: 99vw;
+    height: calc(100vh - 115px);
+}
