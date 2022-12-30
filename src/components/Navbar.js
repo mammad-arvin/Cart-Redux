@@ -136,12 +136,12 @@ const Navbar = ({open}) => {
                   <li onMouseEnter={() => setCategoriesListShow(true)} onMouseLeave={() => setCategoriesListShow(false)}><Link to='/categories'>Categories</Link>
                       <CategoriesList show={categoriesListShow} onMouseEnter={() => setCategoriesListShow(true)} onMouseLeave={() => setCategoriesListShow(false)}>
                         <ul>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach("Electronics")}><Link to="/categories/Electronics" >Electronics <i className="fa-solid fa-laptop-medical"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach("Furniture")}><Link to="/categories/Furniture" >Furniture <i className="fa-solid fa-chair"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach("Clothes")}><Link to="/categories/Clothes" >Clothes <img src={clothe} alt="ico" /> </Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach("Shoes")}><Link to="/categories/Shoes" >Shoes <i className="fa-solid fa-shoe-prints"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach("Others")}><Link to="/categories/Others" >Others <i className="fa-solid fa-o"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach("all")}><Link to="/categories" >All <i className="fa-solid fa-border-all"></i></Link></li>
+                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Electronics"})}><Link to="/categories/Electronics" >Electronics <i className="fa-solid fa-laptop-medical"></i></Link></li>
+                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Fragrances"})}><Link to="/categories/Fragrances" >Fragrances <i className="fa-regular fa-face-smile"></i></Link></li>
+                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Clothes"})}><Link to="/categories/Clothes" >Clothes <img src={clothe} alt="ico" /> </Link></li>
+                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Shoes"})}><Link to="/categories/Shoes" >Shoes <i className="fa-solid fa-shoe-prints"></i></Link></li>
+                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Others"})}><Link to="/categories/Others" >Others <i className="fa-solid fa-o"></i></Link></li>
+                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"all"})}><Link to="/categories" >All <i className="fa-solid fa-border-all"></i></Link></li>
                         </ul>
                       </CategoriesList>
                   </li>
