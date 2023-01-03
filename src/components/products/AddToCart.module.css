@@ -21,13 +21,13 @@
 }
 .counterContainer{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 35px;
     box-sizing: border-box;
     width: 89%;
     height: 36px;
     margin: 0 auto;
+    padding:0 2px;
     border-radius: 12px;
     border: 1px solid silver;
     transition: .3s ease;
@@ -42,7 +42,7 @@
 }
 .counterContainer i{
     color: rgb(0, 0, 0);
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     padding: 4px 5px;
     background-color: orange;
