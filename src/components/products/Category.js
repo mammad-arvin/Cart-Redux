@@ -63,7 +63,8 @@ const Category = ({categoryName, api, categoryId, apiName}) => {
                                             id={product.id}
                                             apiName={apiName} 
                                             image={product.images[0]} 
-                                            title={product.title} 
+                                            title={product.title}
+                                            description={product.description}
                                             category={product.category.name} 
                                             price={product.price} /> ):
                             apiName==="dummy" ?
@@ -74,7 +75,8 @@ const Category = ({categoryName, api, categoryId, apiName}) => {
                                             id={product.id}
                                             apiName={apiName}
                                             image={product.thumbnail} 
-                                            title={product.title} 
+                                            title={product.title}
+                                            description={product.description}
                                             category={product.category} 
                                             price={product.price} /> ):
                             apiName==="fakestoreapi" ?
@@ -86,7 +88,8 @@ const Category = ({categoryName, api, categoryId, apiName}) => {
                                             id={product.id}
                                             apiName={apiName}
                                             image={product.image} 
-                                            title={product.title} 
+                                            title={product.title}
+                                            description={product.description}
                                             category={product.category} 
                                             price={product.price} /> :
                                         null) :
