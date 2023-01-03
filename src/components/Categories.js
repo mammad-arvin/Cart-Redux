@@ -27,9 +27,9 @@ const Categories=() => {
 
     // get data from context
     const products=useContext(ProductContext);
-    const escuelajs=products.APIs[0];
-    const fakestoreapi=products.APIs[1];
-    const dummy=products.APIs[2];
+    const fakestoreapi=products.APIs[0];
+    const dummy=products.APIs[1];
+    const escuelajs=products.APIs[2];
 
     // context
     const Cart_Categoryfilter=useContext(Cart_CategoryfilterContext);
@@ -42,7 +42,7 @@ const Categories=() => {
         
             return (
                 <> 
-                        {
+                        {/* {
                             categoryFilter === "all"  || categoryFilter === "Shoes" ?
                                 <Category 
                                     categoryName="shoes" 
@@ -50,7 +50,7 @@ const Categories=() => {
                                     api={escuelajs} 
                                     apiName='escuelajs' /> :
                                      null
-                        }
+                        } */}
 
                         {
                             categoryFilter === "all"  || categoryFilter === "Electronics" ?

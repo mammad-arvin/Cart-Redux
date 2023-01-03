@@ -39,9 +39,9 @@ const ProductDetails = () => {
 
     //context
     const products=useContext(ProductContext);
-    const escuelajs=products.APIs[0];
-    const fakestoreapi=products.APIs[1];
-    const dummy=products.APIs[2];
+    const fakestoreapi=products.APIs[0];
+    const dummy=products.APIs[1];
+    const escuelajs=products.APIs[2];
      
 
     //get curent url and access to APIName ;)

@@ -85,7 +85,8 @@ const Container=styled.header`
 
 const CategoriesList=styled.div`
     width: 190px;
-    height: 270px;
+    /* height: 270px; */
+    padding-bottom: 15px;
     position: absolute;
     left: -55%;
     border-radius: 10px;
@@ -139,7 +140,7 @@ const Navbar = ({open}) => {
                           <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Electronics"})}><Link to="/categories/Electronics" >Electronics <i className="fa-solid fa-laptop-medical"></i></Link></li>
                           <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Fragrances"})}><Link to="/categories/Fragrances" >Fragrances <i className="fa-regular fa-face-smile"></i></Link></li>
                           <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Clothes"})}><Link to="/categories/Clothes" >Clothes <img src={clothe} alt="ico" /> </Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Shoes"})}><Link to="/categories/Shoes" >Shoes <i className="fa-solid fa-shoe-prints"></i></Link></li>
+                          {/* <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Shoes"})}><Link to="/categories/Shoes" >Shoes <i className="fa-solid fa-shoe-prints"></i></Link></li> */}
                           <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Others"})}><Link to="/categories/Others" >Others <i className="fa-solid fa-o"></i></Link></li>
                           <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"all"})}><Link to="/categories" >All <i className="fa-solid fa-border-all"></i></Link></li>
                         </ul>
