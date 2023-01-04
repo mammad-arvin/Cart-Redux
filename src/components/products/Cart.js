@@ -105,7 +105,7 @@ const Cart = () => {
                                     </div>
                                     <div className={style.balance}>
                                         <h3>Balance<span> (USD)</span>:</h3>
-                                        <h3>${balance}</h3>
+                                        <h3>${balance.toFixed(2)}</h3>
                                     </div>
                                     <button 
                                         onClick={()=> dispach({type:"checkout"})}
