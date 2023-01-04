@@ -11,7 +11,7 @@ import { Cart_CategoryfilterContext } from '../../context/Cart_CategoryfilterCon
 
 
 //helper function
-import { cartProductDescripCuter } from '../helper/functions';
+import { cartProductDescripCuter ,cartProductTitleCuter } from '../helper/functions';
 
 
 const CartProduct = ({data}) => {
@@ -27,7 +27,7 @@ const CartProduct = ({data}) => {
             <div className={style.itemContent}>
                 <img src={image} alt="product image" />
                 <div className={style.itemDescrip}>
-                    <h3>{title}</h3>
+                    <h3>{cartProductTitleCuter(title)}</h3>
                     <p className={style.desctip}>{cartProductDescripCuter(description)} </p>
                 </div>
             </div>

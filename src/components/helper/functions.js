@@ -22,6 +22,10 @@ const cartProductDescripCuter=(description)=>{
     const splited=description.split(" ");
     return splited.splice(0 ,8).join(" ")
 }
+const cartProductTitleCuter=(title)=>{
+    const splited=title.split(" ");
+    return splited.splice(0 ,3).join(" ")
+}
 
 // isincart
 const isInCart=(state , id)=>{
@@ -40,4 +44,4 @@ const quntitiyCounter=(state , id)=>{
 }
 
 
-export {titleCuter, descriptionCuter, detailTitleCuter, isInCart, quntitiyCounter , cartProductDescripCuter};
+export {titleCuter, descriptionCuter, detailTitleCuter, isInCart, quntitiyCounter , cartProductDescripCuter ,cartProductTitleCuter};
