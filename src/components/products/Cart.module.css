@@ -1,0 +1,192 @@
+.cartContainer{
+    width: calc(100vw - 5px);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.cartContainer .leftSile{
+    width: 65%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15px;
+    border-top: 2px solid rgb(1, 171, 223);
+    border-bottom: 2px solid rgb(1, 171, 223);
+    border-radius: 12px;
+    overflow-y: scroll;
+}
+.cartContainer .leftSile .titles{
+    width: 97%;
+    margin: 5px 0;
+}
+.cartContainer .leftSile .titles span{
+    text-align: center;
+}
+.cartContainer .rightSile ,.cartContainer .rightSile .checkuot ,.cartContainer .rightSile .getAddress{
+    display: flex;
+    flex-direction: column;
+}
+.cartContainer .leftSile .EmptyCartImage{
+    width: 78%;
+    height: 78%;
+}
+.cartContainer .leftSile a{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 15px;
+    background-color: rgb(242, 88, 32);
+    border-radius: 4px;
+    padding: 4px 7px;
+}
+.cartContainer .rightSile{
+    width: 270px;
+    height: 90%;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(255, 166, 0, 0.389);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.cartContainer .rightSile .getAddress{
+    width: 100%;
+    height: 62%;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartContainer  h3{
+    font: 500 17px FiraCodeMedium;
+    margin: 0;
+}
+.cartContainer .rightSile .getAddress h3:first-child{
+    margin-top: 17px;
+}
+.cartContainer .rightSile .getAddress input , select{
+    width: 90%;
+    height: 30px;
+    font: 13px FiraCodeMedium;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(147, 126, 98, 0.547);
+    transition: .3s;
+}
+.cartContainer .rightSile .getAddress label{
+    font-size: 12px;
+}
+.cartContainer .rightSile .getAddress select * {
+    border-radius: 16px;
+}
+.cartContainer .rightSile .getAddress .delicConst{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.cartContainer .rightSile .checkuot{
+    width: 100%;
+    height: 35%;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 166, 0, 0.87);
+    position: relative;
+}
+.cartContainer .rightSile .checkuot div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cartContainer .rightSile .checkuot .totalItems{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7px;
+}
+.cartContainer .rightSile .checkuot .balance{
+    width: 90%;
+}
+.cartContainer .rightSile .checkuot .balance span{
+    font-size: 11px;
+}
+.cartContainer .rightSile .checkuot button{
+    outline: none;
+    border: none;
+    font-family: FiraCodeMedium;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.cartContainer .rightSile .checkuot .checkuotBtn{
+    width: 85%;
+    height: 35px;
+    color: #fff;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #c6045f ;
+}
+.cartContainer .rightSile .checkuot hr{
+    width: 100%;
+    height: 2px;
+    border: none;
+    border-bottom: 1.5px solid #fff;
+    position: absolute;
+    bottom: 33px;
+}
+.cartContainer .rightSile .checkuot .clearCartBtn{
+    color: #fff;
+    font-size: 11px;
+    width: 35%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(221, 1, 1);
+}
+
+.checkSuccess{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgba(39, 39, 39, 0.583);
+}
+.checkSuccess h3{
+    color: rgb(255, 255, 255);
+}
+.checkSuccess a{
+    color: white;
+    text-decoration: none;
+    background-color: #c6045f;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+@media(max-width:870px){
+    .cartContainer{
+        flex-direction: column;
+        height: auto;
+        padding:15px 0;
+    }
+    .cartContainer .leftSile{
+        width: 97%;
+        padding-bottom: 15px;
+    }
+    .cartContainer .rightSile{
+        height: 500px;
+    }
+}
+@media(max-width:600px){
+    .cartContainer .leftSile p,.cartContainer .leftSile span{
+        font-size: 13px;
+    }
+}
+@media(max-width:500px){
+    .cartContainer{
+        width: 100%;
+        margin-top: 40px;
+    }
+}

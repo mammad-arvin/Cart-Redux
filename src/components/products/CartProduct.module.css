@@ -1,0 +1,88 @@
+.CartProductContainer{
+    width: 97%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    border-radius: 4px;
+    border-top: 2px solid rgb(104, 104, 104);
+    border-top: 2px solid rgb(192, 192, 192);
+    box-sizing: border-box;
+}
+.CartProductContainer .itemContent , .price, .quantity, .total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CartProductContainer .itemContent {
+    width: 49%;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.CartProductContainer .itemContent img{
+    width: 68px;
+    height: 68px;
+    border-radius: 3px;
+    border: 1px solid  rgb(182, 182, 182);
+}
+.CartProductContainer .itemContent .itemDescrip h3{
+    text-align: left;
+    color: rgb(0, 85, 255);
+}
+.CartProductContainer .itemContent .itemDescrip .desctip{
+    margin: 2px 0;
+    color: rgb(134, 20, 0);
+    font-size: 14px;
+}
+.CartProductContainer .price{
+    width: 12%;
+    height: 80px;
+}
+.CartProductContainer .quantity{
+    width: 23%;
+    height: 80px;
+}
+.CartProductContainer .total{
+    width: 16%;
+    height: 80px;
+    justify-content: space-around;
+}
+.CartProductContainer .total .delete{
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 50%;
+    color: rgb(180, 29, 29);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+:is(.price, .total) p{
+    font-size: 17px;
+}
+@media(max-width:690px){
+    .CartProductContainer .itemContent .itemDescrip h3{
+        font-size: 15px;
+    }
+    .CartProductContainer .itemContent .itemDescrip .desctip{
+        font-size: 12px;
+    }
+}
+@media(max-width:532px){
+    .CartProductContainer .itemContent .itemDescrip h3{
+        font-size: 13px;
+    }
+}
+@media(max-width:500px){
+    .CartProductContainer{
+        width: 100%;
+    }
+    .CartProductContainer .itemContent .itemDescrip .desctip{
+        font-size: 11px;
+    }
+    .CartProductContainer .total .delete{
+        width: 10px;
+        height: 10px;
+        font-size: 11px ;
+    }
+}
