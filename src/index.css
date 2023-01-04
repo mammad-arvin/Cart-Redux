@@ -1,0 +1,27 @@
+@import './font/font.css';
+
+*{
+  padding: 0 ;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-thumb { 
+  background: rgb(50, 134, 253); 
+}
+
+body {
+  font-family: FiraCodeLight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: #d2dae2;
+}
+@media (max-width: 771px) {
+  ::-webkit-scrollbar-thumb { 
+    background: none; 
+  }
+
+}
+
