@@ -121,7 +121,7 @@ const Cart = () => {
                                         <>
                                             <div className={style.checkSuccess}>
                                                 <h3>Check Out Successfully</h3>
-                                                <Link to="/"  onClick={()=> dispach({type:"RefalseCheckout"})}>Back to home page</Link>
+                                                <Link to="/"  onClick={()=> dispach({type:"RefalseCheckout"})}>Empty cart & Back to home</Link>
                                             </div>
                                         </>
                                 

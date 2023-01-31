@@ -51,9 +51,9 @@ const reducer=(state , action)=>{
         case "clearCart":
             return {...state , addedItems:[], itemCounter: 0}
         case "checkout":
-            return {...state , checkout: true , addedItems:[], itemCounter: 0}
+            return {...state , checkout: true }
         case "RefalseCheckout":
-            return {...state , checkout: false}
+            return {...state , checkout: false , addedItems:[], itemCounter: 0}
         case "Tehran":
             return {...state , Province:"Tehran"}
         case "Zagros":
