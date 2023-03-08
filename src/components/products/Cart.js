@@ -1,4 +1,4 @@
-import React,{ useContext} from 'react';
+import React from 'react';
 
 // style
 import style from "./Cart.module.css"
@@ -6,8 +6,8 @@ import style from "./Cart.module.css"
 //component
 import CartProduct from './CartProduct';
 
-//context
-import { Cart_CategoryfilterContext } from '../../context/Cart_CategoryfilterContextProvider';
+//redux
+import { useDispatch, useSelector } from 'react-redux';
 
 
 // empty cart image
@@ -16,11 +16,10 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-
-    //context
-    const cart_catfilter=useContext(Cart_CategoryfilterContext)
-    const cart=cart_catfilter.cart_catfilter.addedItems;
-    const dispach=cart_catfilter.cart_catfilterDispach;
+    //redux
+    const cartState=useSelector(state => state.cartState)
+    const cart=cartState.addedItems;
+    const dispach=useDispatch();
 
     // map on product for get balance
     const balance=cart.reduce(( balance , item)=>{
@@ -30,7 +29,7 @@ const Cart = () => {
 
 
 
-    const TotalItems=`[ ${cart_catfilter.cart_catfilter.itemCounter} Item ]`;
+    const TotalItems=`[ ${cartState.itemCounter} Item ]`;
 
         return (
             <div className={style.cartContainer}>
@@ -56,10 +55,10 @@ const Cart = () => {
                 </div>
                     
                 {
-                    cart_catfilter.cart_catfilter.itemCounter ?
+                    cartState.itemCounter ?
                     <div className={style.rightSile}>
                         {
-                            !cart_catfilter.cart_catfilter.checkout?
+                            !cartState.checkout?
                                 <>
                                         <div className={style.getAddress}>
                                         <h3>CHECKOUT</h3>
@@ -75,19 +74,19 @@ const Cart = () => {
                                         <select name='City'>
                                             <option value="Select City">select...</option>
                                             {
-                                                cart_catfilter.cart_catfilter.Province ==="Tehran" ?
+                                                cartState.Province ==="Tehran" ?
                                                     <>
                                                         <option value="Tehran">Tehran</option>
                                                         <option value="karaj">karaj</option>
                                                         <option value="shahr ghods">shahr ghods</option>
                                                     </>:
-                                                cart_catfilter.cart_catfilter.Province ==="Zagros" ?
+                                                cartState.Province ==="Zagros" ?
                                                     <>
                                                         <option value="Yasuj">Yasuj</option>
                                                         <option value="sisakht">sisakht</option>
                                                         <option value="dehdasht">dehdasht</option>
                                                     </>:
-                                                cart_catfilter.cart_catfilter.Province ==="Fars" ?
+                                                cartState.Province ==="Fars" ?
                                                     <>
                                                         <option value="shiraz">shiraz</option>
                                                         <option value="sadra">sadra</option>

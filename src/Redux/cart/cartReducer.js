@@ -1,31 +1,13 @@
-import React,{ useReducer , createContext} from 'react';
-
-// create context porovider
-export const Cart_CategoryfilterContext=createContext();
-
-const initialval={
-    categoreFilter: "all",
+const initialState={
     addedItems:[
     ],
     itemCounter:0,
     checkout:false,
     Province:"",
 }
-const reducer=(state , action)=>{
+const cartReducer=(state= initialState , action)=>{
 
     switch(action.type){
-        case "Electronics":
-            return { ...state , categoreFilter:"Electronics"}
-        case "Fragrances":
-            return { ...state , categoreFilter:"Fragrances"}
-        case "Clothes":
-            return { ...state , categoreFilter:"Clothes"}
-        case "Shoes":
-            return { ...state , categoreFilter:"Shoes"}
-        case "Others":
-            return { ...state , categoreFilter:"Others"}
-        case "all":
-            return { ...state , categoreFilter:"all"}
         case "AddToCart":
             if(!state.addedItems.find(item => item.id=== action.paylod.id)){
                 state.addedItems.push({
@@ -59,19 +41,10 @@ const reducer=(state , action)=>{
         case "Zagros":
             return {...state , Province:"Zagros"}
         case "Fars":
-            return {...state , Province:"Fars"}       
+            return {...state , Province:"Fars"}
+        default:
+            return state;  
     }
 }
 
-
-const Cart_CategoryfilterContextProvider = ({children}) => {
-    const [cart_catfilter , cart_catfilterDispach]=useReducer(reducer , initialval)
-    
-    return (
-            <Cart_CategoryfilterContext.Provider value={{ cart_catfilter , cart_catfilterDispach}} >
-                {children}
-            </Cart_CategoryfilterContext.Provider>
-    );
-};
-
-export default Cart_CategoryfilterContextProvider;
+export default cartReducer;

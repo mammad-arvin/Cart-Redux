@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-// context
-import Cart_CategoryfilterContextProvider from "./context/Cart_CategoryfilterContextProvider";
 
 // components
 import Humber from "./components/Humber";
@@ -35,7 +33,6 @@ const App = () => {
     return (
         <>
             <Provider store={store}>
-                    <Cart_CategoryfilterContextProvider>
                         <Humber
                             open={open}
                             hamburgarCliclHandler={hamburgarCliclHandler}
@@ -72,7 +69,6 @@ const App = () => {
                                 />
                             </Routes>
                         </div>
-                    </Cart_CategoryfilterContextProvider>
             </Provider>
 
             <Footer />

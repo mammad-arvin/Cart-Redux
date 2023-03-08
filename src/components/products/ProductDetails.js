@@ -1,4 +1,4 @@
-import React, {useContext ,useState} from 'react';
+import React, { useState } from 'react';
 
 //pakage
 import { useNavigate } from 'react-router-dom';
@@ -6,9 +6,6 @@ import { useParams } from 'react-router-dom';
 
 // styles
 import style from "./ProductDetails.module.css"
-
-//context
-import { Cart_CategoryfilterContext } from '../../context/Cart_CategoryfilterContextProvider';
 
 //redux
 import { useSelector } from 'react-redux';
@@ -68,13 +65,13 @@ const ProductDetails = () => {
     }
 
 
-    //context
-    const cartContext=useContext(Cart_CategoryfilterContext);
-    
+    //redux of cart
+    const cartState=useSelector(state => state.cartState)
+
     //get quntitiy of product
     let quntitiy= 1;
-    if(quntitiyCounter(cartContext.cart_catfilter ,productId)){
-        quntitiy=quntitiyCounter(cartContext.cart_catfilter ,productId);
+    if(quntitiyCounter(cartState ,productId)){
+        quntitiy=quntitiyCounter(cartState ,productId);
     }
 
 

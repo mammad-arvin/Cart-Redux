@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React from 'react';
 
 //styel
 import style from "./CartProduct.module.css"
@@ -6,8 +6,8 @@ import style from "./CartProduct.module.css"
 // component
 import AddToCart from "./AddToCart"
 
-//context
-import { Cart_CategoryfilterContext } from '../../context/Cart_CategoryfilterContextProvider';
+//redux
+import { useDispatch } from 'react-redux';
 
 
 //helper function
@@ -18,9 +18,13 @@ const CartProduct = ({data}) => {
 
     const {image ,title ,description ,price , quntity}=data;
 
+
+    //redux
+    const dispatch=useDispatch();
+
     //context
-    const context=useContext(Cart_CategoryfilterContext);
-    const dispactch=context.cart_catfilterDispach;
+    // const context=useContext(Cart_CategoryfilterContext);
+    // const dispactch=context.cart_catfilterDispach;
 
     return (
         <div className={style.CartProductContainer}>
@@ -42,7 +46,7 @@ const CartProduct = ({data}) => {
                 <i 
                     className={`fa-solid fa-xmark ${style.delete}`} 
                     title='delete product'
-                    onClick={()=> dispactch({type:"removeItemFromCart" , paylod:data})}
+                    onClick={()=> dispatch({type:"removeItemFromCart" , paylod:data})}
                     ></i>
             </div>
 

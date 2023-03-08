@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React from 'react';
 
 //pakages
 import { Link } from 'react-router-dom';
@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 //style
 import style from './Basket.module.css';
 
-// context
-import { Cart_CategoryfilterContext } from '../context/Cart_CategoryfilterContextProvider';
+//redux
+import { useSelector } from 'react-redux';
 
 const Basket = () => {
 
-  //context
-  const cart=useContext(Cart_CategoryfilterContext);
-  const itemCounter=cart.cart_catfilter.itemCounter;
+  //redux
+  const cartState=useSelector(state => state.cartState)
+  const itemCounter=cartState.itemCounter;
   
     return (
         <div>

@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React from 'react';
 
 //pakages
 import styled from 'styled-components';
@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 import {titleCuter, quntitiyCounter} from '../helper/functions'
 import AddToCart from './AddToCart';
 
-// context
-import { Cart_CategoryfilterContext } from '../../context/Cart_CategoryfilterContextProvider';
+//redux
+import { useSelector } from 'react-redux';
 
 
 // styled components
@@ -82,13 +82,13 @@ const Product= (props)=> {
 
     const {image,title,category,price ,id ,apiName}=props;
 
-    //context
-    const cartContext=useContext(Cart_CategoryfilterContext)
+    //redux
+    const cartState=useSelector(state => state.cartState);
 
     //get quntitiy of product
     let quntitiy= 1;
-    if(quntitiyCounter(cartContext.cart_catfilter ,id)){
-        quntitiy=quntitiyCounter(cartContext.cart_catfilter ,id);
+    if(quntitiyCounter(cartState ,id)){
+        quntitiy=quntitiyCounter(cartState ,id);
     }
      
         return (
