@@ -1,4 +1,4 @@
-import React, {useState ,useContext} from 'react';
+import React, {useState } from 'react';
 
 //pakages
 import { Link } from 'react-router-dom';
@@ -7,8 +7,8 @@ import styled from 'styled-components';
 //images
 import clothe from "../assets/icon/clothes-svgrepo-com.svg"
 
-// context
-import { Cart_CategoryfilterContext } from '../context/Cart_CategoryfilterContextProvider';
+//redux
+import { useDispatch } from 'react-redux';
 
 // styled components
 const Container=styled.header`
@@ -124,8 +124,8 @@ const Navbar = ({open}) => {
 
     const [categoriesListShow , setCategoriesListShow]=useState(false);
 
-    //context
-    const categoryFilter=useContext(Cart_CategoryfilterContext)
+    //redux
+    const dispach=useDispatch();
     
     return (
         <>
@@ -137,12 +137,12 @@ const Navbar = ({open}) => {
                   <li onMouseEnter={() => setCategoriesListShow(true)} onMouseLeave={() => setCategoriesListShow(false)}><Link to='/categories'>Categories</Link>
                       <CategoriesList show={categoriesListShow} onMouseEnter={() => setCategoriesListShow(true)} onMouseLeave={() => setCategoriesListShow(false)}>
                         <ul>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Electronics"})}><Link to="/categories/Electronics" >Electronics <i className="fa-solid fa-laptop-medical"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Fragrances"})}><Link to="/categories/Fragrances" >Fragrances <i className="fa-regular fa-face-smile"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Clothes"})}><Link to="/categories/Clothes" >Clothes <img src={clothe} alt="ico" /> </Link></li>
-                          {/* <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Shoes"})}><Link to="/categories/Shoes" >Shoes <i className="fa-solid fa-shoe-prints"></i></Link></li> */}
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"Others"})}><Link to="/categories/Others" >Others <i className="fa-solid fa-o"></i></Link></li>
-                          <li onClick={()=> categoryFilter.cart_catfilterDispach({type:"all"})}><Link to="/categories" >All <i className="fa-solid fa-border-all"></i></Link></li>
+                          <li onClick={()=> dispach({type:"Electronics"})}><Link to="/categories/Electronics" >Electronics <i className="fa-solid fa-laptop-medical"></i></Link></li>
+                          <li onClick={()=> dispach({type:"Fragrances"})}><Link to="/categories/Fragrances" >Fragrances <i className="fa-regular fa-face-smile"></i></Link></li>
+                          <li onClick={()=> dispach({type:"Clothes"})}><Link to="/categories/Clothes" >Clothes <img src={clothe} alt="ico" /> </Link></li>
+                          {/* <li onClick={()=> dispach({type:"Shoes"})}><Link to="/categories/Shoes" >Shoes <i className="fa-solid fa-shoe-prints"></i></Link></li> */}
+                          <li onClick={()=> dispach({type:"Others"})}><Link to="/categories/Others" >Others <i className="fa-solid fa-o"></i></Link></li>
+                          <li onClick={()=> dispach({type:"all"})}><Link to="/categories" >All <i className="fa-solid fa-border-all"></i></Link></li>
                         </ul>
                       </CategoriesList>
                   </li>

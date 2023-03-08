@@ -1,7 +1,4 @@
-import React, {useContext , useEffect} from 'react';
-
-//redux
-import { useSelector } from 'react-redux';
+import React, {useEffect} from 'react';
 
 //  packages
 import styled from 'styled-components';
@@ -10,10 +7,10 @@ import styled from 'styled-components';
 import Category from './products/Category';
 import loader from '../assets/loader.gif';
 
-
-// contexts
-import { Cart_CategoryfilterContext } from '../context/Cart_CategoryfilterContextProvider';
-
+//redux
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { getDataFromAPIs } from '../Redux/APIs data/APIaction';
 
 // styled components
 const LoaderContainer=styled.div`
@@ -25,18 +22,11 @@ const LoaderContainer=styled.div`
 `;
 
 
-//redux
-import { useDispatch } from 'react-redux';
-import { getDataFromAPIs } from '../Redux/APIs data/APIaction';
-
-
-
-
 const Categories=() => {
 
     // get data from redux
     const products=useSelector(state => state.APIsState)
-    console.log(products);
+    
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getDataFromAPIs());
@@ -47,13 +37,9 @@ const Categories=() => {
     const dummy=products.APIs[1];
     // const escuelajs=products.APIs[2];
 
-    // context
-    const Cart_Categoryfilter=useContext(Cart_CategoryfilterContext);
-    const categoryFilter=Cart_Categoryfilter.cart_catfilter.categoreFilter;
-    
-
-
-
+    // filetr with redux
+    const Cart_Categoryfilter=useSelector(state => state.filetrState)
+    const categoryFilter=Cart_Categoryfilter.categoreFilter;
     
 
 
