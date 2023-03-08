@@ -22,10 +22,6 @@ const CartProduct = ({data}) => {
     //redux
     const dispatch=useDispatch();
 
-    //context
-    // const context=useContext(Cart_CategoryfilterContext);
-    // const dispactch=context.cart_catfilterDispach;
-
     return (
         <div className={style.CartProductContainer}>
             <div className={style.itemContent}>
