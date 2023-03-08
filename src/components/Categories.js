@@ -1,4 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useContext , useEffect} from 'react';
+
+//redux
+import { useSelector } from 'react-redux';
 
 //  packages
 import styled from 'styled-components';
@@ -9,7 +12,6 @@ import loader from '../assets/loader.gif';
 
 
 // contexts
-import {ProductContext} from "../context/ProductsContextProvider";
 import { Cart_CategoryfilterContext } from '../context/Cart_CategoryfilterContextProvider';
 
 
@@ -23,17 +25,36 @@ const LoaderContainer=styled.div`
 `;
 
 
+//redux
+import { useDispatch } from 'react-redux';
+import { getDataFromAPIs } from '../Redux/APIs data/APIaction';
+
+
+
+
 const Categories=() => {
 
-    // get data from context
-    const products=useContext(ProductContext);
+    // get data from redux
+    const products=useSelector(state => state.APIsState)
+    console.log(products);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getDataFromAPIs());
+    },[]);
+
+    
     const fakestoreapi=products.APIs[0];
     const dummy=products.APIs[1];
-    const escuelajs=products.APIs[2];
+    // const escuelajs=products.APIs[2];
 
     // context
     const Cart_Categoryfilter=useContext(Cart_CategoryfilterContext);
     const categoryFilter=Cart_Categoryfilter.cart_catfilter.categoreFilter;
+    
+
+
+
+    
 
 
     if(products.APIs.length){

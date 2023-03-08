@@ -8,8 +8,10 @@ import { useParams } from 'react-router-dom';
 import style from "./ProductDetails.module.css"
 
 //context
-import { ProductContext } from '../../context/ProductsContextProvider';
 import { Cart_CategoryfilterContext } from '../../context/Cart_CategoryfilterContextProvider';
+
+//redux
+import { useSelector } from 'react-redux';
 
 //components
 import AddToCart from './AddToCart';
@@ -37,8 +39,9 @@ const ProductDetails = () => {
     const params=useParams();
     const productId=JSON.parse(params.id)
 
-    //context
-    const products=useContext(ProductContext);
+
+    // redux
+    const products=useSelector(state => state.APIsState)
     const fakestoreapi=products.APIs[0];
     const dummy=products.APIs[1];
     const escuelajs=products.APIs[2];
@@ -67,6 +70,7 @@ const ProductDetails = () => {
 
     //context
     const cartContext=useContext(Cart_CategoryfilterContext);
+    
     //get quntitiy of product
     let quntitiy= 1;
     if(quntitiyCounter(cartContext.cart_catfilter ,productId)){
