@@ -1,7 +1,7 @@
 // for product component
 const titleCuter=(title)=>{
     const splited=title.split(" ");
-    const newTitle=splited[0] +" "+ splited[1] +" "+splited[2] ;
+    const newTitle=splited[0] +" "+ splited[1] ;
     return newTitle;
 }
 
@@ -15,16 +15,16 @@ const descriptionCuter=(description)=>{
 
 const detailTitleCuter=(title)=>{
     const splited=title.split(" ");
-    const newTitle=splited[0] +" "+ splited[1] +" "+splited[2]+" "+splited[3] ;
+    const newTitle=splited[0] +" "+ splited[1] ;
     return newTitle;
 }
 const cartProductDescripCuter=(description)=>{
     const splited=description.split(" ");
-    return splited.splice(0 ,8).join(" ")
+    return splited.splice(0 ,5).join(" ")
 }
 const cartProductTitleCuter=(title)=>{
     const splited=title.split(" ");
-    return splited.splice(0 ,3).join(" ")
+    return splited.splice(0 ,2).join(" ")
 }
 
 // isincart
